@@ -1,0 +1,39 @@
+.light_on{
+    background-color: rgba(247, 246, 246, 0.9);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.light_off{
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: Arial, Helvetica, sans-serif;
+    color:#dddddd
+}
+#icon{
+    width: 100px;;
+}
+#x_yplain{
+    position:relative;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.input{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    line-height:30px;
+}
+#orgin_x,#orgin_y{
+    width: 50px;
+}
+#light{
+    width: 50px;
+    position: absolute;
+    top:5px;
+    right:10px
+}
+#content{
+    position:absolute;
+    left: 50%;
+    top:0px;
+    transform: translate(-50%,10%);
+    align-content: center;
+}
