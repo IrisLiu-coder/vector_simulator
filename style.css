@@ -26,9 +26,12 @@
 }
 #light{
     width: 50px;
-    position: absolute;
-    top:5px;
-    right:10px
+    float:right;
+}
+#gmail{
+    margin: 5px;
+    float:right;
+    width: 40px;
 }
 #content{
     position:absolute;
@@ -43,11 +46,13 @@
 .new_revise{
     float:left;
 }
-#l,#r{
+
+#send_matrix{
+    float:left;
+}
+.l,.r{
+    float:left;
     position:relative;
     top: -10px;
     font-size: 50px;
-}
-#send_matrix{
-    float:left;
 }

@@ -19,14 +19,32 @@
         <hr>
         <canvas id="x_yplain" width="640" height="360"></canvas>
         <hr>
-        <div style="text-align: center;"><div class="new_revise" id="l">[</div> <span class="new_revise">
-            <input type="number" class="matrix" value="1"><input type="number" class="matrix" value="0">
-            <br><input type="number" class="matrix" value="0"><input type="number" class="matrix" value="1">
-        </span><div class="new_revise" id="r" >]</div><div id="send_matrix">➲<br>multiply the matrix </div> 
-        <div class="new_revise" id="l"> | [</div> <span class="new_revise">
-            <input type="number" class="vector" value="0">
-            <br><input type="number" class="vector" value="0">
-        </span><div class="new_revise" id="r">]</div><div id="send_vectorS">➲<br>add vector</div> 
+        <div style="text-align: center;"><div class="l">[</div> <span class="new_revise">
+            <select id="a">
+                <option value="none">none</option>
+                <option value="cos">cos</option>
+                <option value="-cos">-cos</option>
+            </select><input id="A" type="number" class="matrix" value="1">
+            <select id="b">
+                <option value="none">none</option>
+                <option value="sin">sin</option>
+                <option value="-sin">-sin</option>
+            </select><input id="B" type="number" class="matrix" value="0">
+            <br><select id="c">
+                <option value="none">none</option>
+                <option value="sin">sin</option>
+                <option value="-sin">-sin</option>
+            </select><input id="C" type="number" class="matrix" value="0">
+            <select id="d">
+                <option value="none">none</option>
+                <option value="cos">cos</option>
+                <option value="-cos">-cos</option>
+            </select><input id="D" type="number" class="matrix" value="1">
+        </span><div class="r" >]</div><div onclick="send_matrix()" id="send_matrix">➲<br>multiply the matrix </div> 
+        <div class="l"> | [</div> <span class="new_revise">
+            <input type="number" class="vector" value="0" id="x">
+            <br><input type="number" class="vector" value="0" id="y">
+        </span><div class="r">]</div><div onclick="send_vectors()">➲<br>add vector</div> 
         <div style="clear:both;"></div>
         </div>
         
