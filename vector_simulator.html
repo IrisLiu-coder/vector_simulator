@@ -13,30 +13,32 @@
         <img src="source/switch_on.png" id="light">
         <img src="source/vector_simulator_icon.png" id="icon">
         <div>Vector simulator</div> <div id="content">
-         <div class="input" align="center">orgin= ( <input type="number" id="orgin_x"> , <input type="number"id="orgin_y">) 
-            <div>final= ( <span id="new_x"> </span>  , <span id="new_y"> </span> ) </div>
+        <div class="menu"><a href="https://sites.google.com/view/liu-iris/%E9%A6%96%E9%A0%81" class="menu">Home</a>
+            <a href="https://www.instagram.com/benny._.liu/" class="menu">Instagram</a>
+            <a href="mailto:bennywow0413@gmail.com" class="menu">Gmail</a>
+            <a href="https://github.com/IrisLiu-coder" class="menu">Github</a>
         </div>
         <hr>
         <canvas id="x_yplain" width="640" height="360"></canvas>
         <hr>
         <div style="text-align: center;"><div class="l">[</div> <span class="new_revise">
             <select id="a">
-                <option value="none">none</option>
+                <option value="">none</option>
                 <option value="cos">cos</option>
                 <option value="-cos">-cos</option>
             </select><input id="A" type="number" class="matrix" value="1">
             <select id="b">
-                <option value="none">none</option>
+                <option value="">none</option>
                 <option value="sin">sin</option>
                 <option value="-sin">-sin</option>
             </select><input id="B" type="number" class="matrix" value="0">
             <br><select id="c">
-                <option value="none">none</option>
+                <option value="">none</option>
                 <option value="sin">sin</option>
                 <option value="-sin">-sin</option>
             </select><input id="C" type="number" class="matrix" value="0">
             <select id="d">
-                <option value="none">none</option>
+                <option value="">none</option>
                 <option value="cos">cos</option>
                 <option value="-cos">-cos</option>
             </select><input id="D" type="number" class="matrix" value="1">
@@ -46,10 +48,26 @@
             <br><input type="number" class="vector" value="0" id="y">
         </span><div class="r">]</div><div onclick="send_vectors()">➲<br>add vector</div> 
         <div style="clear:both;"></div>
-        </div>
+        <hr>
+        <b>Transform</b></div>
+        <div style="text-align: center;"></div>
+        <div id="old_revise"></div><div id="over"><div class="l">[</div><span id="old_vec"></span><div class="r" >]</div></div>
+        <hr>
+        <b>Introduction</b>
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)"class="menu" id="1">Vector_(mathematics_and_physics)-wikipedia</a>
+        <br><a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)"class="menu" id="2">Matrix (mathematics)-wikipedia</a>
+        <br><br><b>High-quality instructional videos</b>
+        <br><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fNk_zzaMoSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="knowledge"></iframe>
+        <br><br><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/k7RM-ot2NWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="knowledge"></iframe>
+        <br><br><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kYB8IZa5AuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="knowledge"></iframe>
+        <br><br><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XkY2DOUCWMU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="knowledge"></iframe>
+    </div>
         
-        <div id="old revise"></div>
-        </div>
         <script src="active.js" charset="UTF-8"></script>   
         
         

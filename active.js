@@ -13,7 +13,7 @@ var color=[
     vec:"#e3e3e3"
 }];
 var vectors=[{x:0,y:0},{x:10,y:0},{x:0,y:10},{x:0,y:0}];
-var matrixs=[[["none",1],["none",0],["none",0],["none",1]]];
+var matrixs=[[["",1],["",0],["",0],["",1]]];
 var matrixA=document.getElementById("a"),matrixB=document.getElementById("b"),matrixC=document.getElementById("c"),matrixD=document.getElementById("d");
 function send_matrix(){
     console.log("matrix");
@@ -22,11 +22,18 @@ function send_matrix(){
     [document.getElementById("c").value,document.getElementById("C").value],
     [document.getElementById("d").value,document.getElementById("D").value]]
     );
+    document.getElementById("old_revise").insertAdjacentHTML("afterbegin",'<div class="l">[</div><span class="new_revise"><div>'+
+    document.getElementById("a").value+document.getElementById("A").value+
+    ' '+document.getElementById("b").value+document.getElementById("B").value+'</div><br><div>'+document.getElementById("c").value+document.getElementById("C").value+
+    ' '+document.getElementById("d").value+document.getElementById("D").value+'</div></span><div class="r" >]</div>')
 }
 function send_vectors(){
     console.log("vector");
     vectors.push({x:document.getElementById("x").value,y:document.getElementById("y").value});
+    document.getElementById("old_vec").insertAdjacentHTML("beforeend",'<span class="new_revise"><div>&nbsp'+
+    document.getElementById("x").value+'&nbsp</div><br><div>&nbsp'+document.getElementById("y").value+'&nbsp</div></span>')
 }
+
 var myImage = document.getElementById("light");
 myImage.onclick = function() {
     let mySrc = myImage.getAttribute('src');
@@ -35,9 +42,13 @@ myImage.onclick = function() {
         myImage.setAttribute ('src',mode[1]);
         body.className="light_off";
         light=1;
+        document.querySelector("a").className="dmenu";
+        document.getElementById("1").className="dmenu";document.getElementById("2").className="dmenu";
     } else {
         myImage.setAttribute ('src',mode[0]);
         body.className="light_on";
+        document.querySelector("a").className="menu";
+        document.getElementById("1").className="menu";document.getElementById("2").className="menu";
         light=0;
     }
 }
@@ -108,7 +119,7 @@ function vec_mutiple(){
     var matrix=[0,0,0,0],new_matrix=[1,0,0,1];
     for(var j=matrixs.length-1;j>=0;j--){
         for(var k=0;k<4;k++){
-            if(matrixs[j][k][0]=="none"){matrix[k]=Number(matrixs?.[j]?.[k]?.[1]);}else              
+            if(matrixs[j][k][0]==""){matrix[k]=Number(matrixs?.[j]?.[k]?.[1]);}else              
             if(matrixs[j][k][0]=="sin"){matrix[k]=Math.sin(Number(matrixs?.[j]?.[k]?.[1])* Math.PI/180);}else
             if(matrixs[j][k][0]=="-sin"){matrix[k]=-Math.sin(Number(matrixs?.[j]?.[k]?.[1])* Math.PI/180);}else
             if(matrixs[j][k][0]=="cos"){matrix[k]=Math.cos(Number(matrixs?.[j]?.[k]?.[1])* Math.PI/180);}else

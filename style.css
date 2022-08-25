@@ -34,11 +34,13 @@
     width: 40px;
 }
 #content{
+    width: 640px;
     position:absolute;
     left: 50%;
-    top:0px;
-    transform: translate(-50%,10%);
+    top:10px;
+    transform: translate(-50%,0);
     align-content: center;
+    text-align: center;
 }
 .vector,.matrix{
     width: 50px;
@@ -55,4 +57,37 @@
     position:relative;
     top: -10px;
     font-size: 50px;
+}
+#old_revise{
+    width: 480px;
+    height: 70px;
+    display: -webkit-box;
+    overflow-x: scroll;
+    white-space: nowrap;
+    float: left;
+}
+#over{
+    width: 160px;
+    height: 70px;
+    display: -webkit-box;
+    overflow-x: scroll;
+    white-space: nowrap;
+    float: left;
+}
+.knowledge{
+    text-align: center;
+}
+.measure{
+    float: left;
+    position: relative;
+    top:5px;
+    text-align: left;
+}
+.menu{
+    margin: 10px;
+    color:black;
+}
+.dmenu{
+    margin: 10px;
+    color:#dddddd;
 }
