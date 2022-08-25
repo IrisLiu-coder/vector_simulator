@@ -6,11 +6,13 @@ var color=[
 {
     background:"#ffffff",
     x_yplain:"#bbcdff",
-    vec:"#00159d"
+    vec:"#00159d",
+    final_vec:"#000000"
 },{
     background:"#5b5b5b",
     x_yplain:"#3b3b3b",
-    vec:"#e3e3e3"
+    vec:"#e3e3e3",
+    final_vec:"#ffffff"
 }];
 var vectors=[{x:0,y:0},{x:10,y:0},{x:0,y:10},{x:0,y:0}];
 var matrixs=[[["",1],["",0],["",0],["",1]]];
@@ -61,11 +63,11 @@ function shoot(ox,oy,x,y,X){
     var m=(oy-y)/(ox-x);
     return m*X;
 }
-function vector(x1,y1,x2,y2){
+function vector(x1,y1,x2,y2,c){
     ctx.beginPath();
     ctx.moveTo(x(x1), y(y1));
     ctx.lineTo(x(x2), y(y2));
-    ctx.strokeStyle = color[light].vec;
+    ctx.strokeStyle = c;
     ctx.lineWidth = 1;
     ctx.stroke();
     ctx.closePath();
@@ -83,7 +85,7 @@ function vector(x1,y1,x2,y2){
     ctx.moveTo (5 * Math.cos(0), 5 * Math.sin(0));          
     for (var i = 1; i <= 3;i += 1) {ctx.lineTo (5 * Math.cos(i * 2 * Math.PI / 3), 5 * Math.sin(i * 2 * Math.PI / 3));}
     ctx.closePath();
-    ctx.fillStyle=color[light].vec;
+    ctx.fillStyle=c;
     ctx.fill();
     ctx.rotate(-radians);
     ctx.translate(-x(x2), -y(y2));
@@ -137,18 +139,19 @@ function draw(){
     ctx.clearRect(0,0,640,360);
     background();
     var last=[0,0],final=[0,0],matrix=vec_mutiple();
-    for(var i=0;i<vectors.length;i++){
-        if(i>=4){
-                final[0]=final[0]+Number(vectors[i].x);
-                final[1]=final[1]+Number(vectors[i].y);
-                vector(matrix[0]*last[0]+matrix[1]*last[1],matrix[2]*last[0]+matrix[3]*last[1],matrix[0]*final[0]+matrix[1]*final[1],matrix[2]*final[0]+matrix[3]*final[1]);
-            }
-        last=[final[0],final[1]];   
-    }
     xy(matrix[0]*vectors[1].x+matrix[1]*vectors[1].y,
         matrix[2]*vectors[1].x+matrix[3]*vectors[1].y,
         matrix[0]*vectors[2].x+matrix[1]*vectors[2].y,
         matrix[2]*vectors[2].x+matrix[3]*vectors[2].y
         );
+    for(var i=0;i<vectors.length;i++){
+        if(i>=4){
+                final[0]=final[0]+Number(vectors[i].x);
+                final[1]=final[1]+Number(vectors[i].y);
+                vector(matrix[0]*last[0]+matrix[1]*last[1],matrix[2]*last[0]+matrix[3]*last[1],matrix[0]*final[0]+matrix[1]*final[1],matrix[2]*final[0]+matrix[3]*final[1],color[light].vec);
+            }
+        last=[final[0],final[1]];   
+    }
+    vector(0,0,matrix[0]*final[0]+matrix[1]*final[1],matrix[2]*final[0]+matrix[3]*final[1],color[light].final_vec);
 }
 setInterval('draw()',10);
