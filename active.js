@@ -12,7 +12,7 @@ var color=[
     background:"#5b5b5b",
     x_yplain:"#3b3b3b",
     vec:"#e3e3e3",
-    final_vec:"#ffffff"
+    final_vec:"#000000"
 }];
 var vectors=[{x:0,y:0},{x:10,y:0},{x:0,y:10},{x:0,y:0}];
 var matrixs=[[["",1],["",0],["",0],["",1]]];
