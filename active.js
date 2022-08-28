@@ -44,13 +44,11 @@ myImage.onclick = function() {
         myImage.setAttribute ('src',mode[1]);
         body.className="light_off";
         light=1;
-        document.querySelector("a").className="dmenu";
-        document.getElementById("1").className="dmenu";document.getElementById("2").className="dmenu";
+        document.querySelector("a").className="dmenu";document.getElementById("1").className="dmenu";document.getElementById("2").className="dmenu";document.getElementById("ig").className="dmenu";document.getElementById("gmail").className="dmenu";document.getElementById("github").className="dmenu";
     } else {
         myImage.setAttribute ('src',mode[0]);
         body.className="light_on";
-        document.querySelector("a").className="menu";
-        document.getElementById("1").className="menu";document.getElementById("2").className="menu";
+        document.querySelector("a").className="menu";document.getElementById("1").className="menu";document.getElementById("2").className="menu";document.getElementById("ig").className="menu";document.getElementById("gmail").className="menu";document.getElementById("github").className="menu";
         light=0;
     }
 }
